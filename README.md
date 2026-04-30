@@ -76,7 +76,7 @@ The `requirements-engineer` subagent will orchestrate five skills.
 ```bash
 cd <project-dir>
 codex
-Spawn requirement-engineer subagent
+Spawn requirements-engineer subagent
 I want to develop a team task management web app. Analyze and Specify requirements.
 ```
 
