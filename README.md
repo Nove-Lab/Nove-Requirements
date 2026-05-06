@@ -57,15 +57,17 @@ cd Nove-Requirements
 #### Global install (`~/`)
 
 ```bash
-mkdir -p ~/.codex
-cp -R codex/. ~/.codex/
+mkdir -p ~/.codex/agents ~/.agents/skills
+cp codex/agents/*.toml ~/.codex/agents/
+cp -R codex/skills/* ~/.agents/skills/
 ```
 
 #### Project-local install (`<project-dir>/`)
 
 ```bash
-mkdir -p <project-dir>/.codex
-cp -R codex/. <project-dir>/.codex/
+mkdir -p <project-dir>/.codex/agents <project-dir>/.agents/skills
+cp codex/agents/*.toml <project-dir>/.codex/agents/
+cp -R codex/skills/* <project-dir>/.agents/skills/
 ```
 
 #### Usage
