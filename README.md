@@ -48,7 +48,7 @@ requirements-analysis-<task-name>/
 2. Move to the repository root.
 
 ```bash
-git clone https://github.com/nove-ai-lab/Nove-Requirements.git
+git clone https://github.com/Nove-Lab/Nove-Requirements.git
 cd Nove-Requirements
 ```
 
