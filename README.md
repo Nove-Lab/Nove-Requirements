@@ -24,7 +24,15 @@ codex/
     domain-modeling/
     system-responsibility-modeling/
     requirement-specification/
-claude-code/
+claude/
+  agents/
+    requirements-engineer.md
+  skills/
+    context-modeling/
+    use-case-modeling/
+    domain-modeling/
+    system-responsibility-modeling/
+    requirement-specification/
 ```
 
 ## What the Subagent and Skills Generate
@@ -58,7 +66,7 @@ cd Nove-Requirements
 
 ```bash
 mkdir -p ~/.codex/agents ~/.agents/skills
-cp codex/agents/*.toml ~/.codex/agents/
+cp codex/agents/* ~/.codex/agents/
 cp -R codex/skills/* ~/.agents/skills/
 ```
 
@@ -66,7 +74,7 @@ cp -R codex/skills/* ~/.agents/skills/
 
 ```bash
 mkdir -p <project-dir>/.codex/agents <project-dir>/.agents/skills
-cp codex/agents/*.toml <project-dir>/.codex/agents/
+cp codex/agents/* <project-dir>/.codex/agents/
 cp -R codex/skills/* <project-dir>/.agents/skills/
 ```
 
@@ -78,28 +86,63 @@ The `requirements-engineer` subagent will orchestrate five skills.
 ```bash
 cd <project-dir>
 codex
-Spawn requirements-engineer subagent
-I want to develop a team task management web app. Analyze and Specify requirements.
+> Spawn requirements-engineer subagent
+> I want to develop a team task management web app. Analyze and Specify requirements.
 ```
 
 Or use one skill directly based on your current needs:
-   - `$context-modeling`
-   - `$use-case-modeling`
-   - `$domain-modeling`
-   - `$system-responsibility-modeling`
-   - `$requirement-specification`
+
+- `$context-modeling`
+- `$use-case-modeling`
+- `$domain-modeling`
+- `$system-responsibility-modeling`
+- `$requirement-specification`
 
 ```bash
 cd <project-dir>
 codex
-$context-modeling Perform context modeling for a team task management web app.
+> $context-modeling Perform context modeling for a team task management web app.
 ```
-
-
-
-
 
 ### for Claude Code
 
-It will be updated later.
+#### Global install (`~/`)
+
+```bash
+mkdir -p ~/.claude/agents ~/.claude/skills
+cp claude/agents/* ~/.claude/agents/
+cp -R claude/skills/* ~/.claude/skills/
+```
+
+#### Project-local install (`<project-dir>/`)
+
+```bash
+mkdir -p <project-dir>/.claude/agents <project-dir>/.claude/skills
+cp claude/agents/* <project-dir>/.claude/agents/
+cp -R claude/skills/* <project-dir>/.claude/skills/
+```
+
+#### Usage
+
+Invoke the **requirements-engineer** subagent using `**@agent-requirements-engineer`** (recommended), or open `**/agents**` and launch **requirements-engineer**, then describe your goal. 
+
+```bash
+cd <project-dir>
+claude
+> @agent-requirements-engineer I want to develop a team task management web app. Analyze and specify requirements.
+```
+
+Or use one skill directly based on your current needs:
+
+- `/context-modeling`
+- `/use-case-modeling`
+- `/domain-modeling`
+- `/system-responsibility-modeling`
+- `/requirements-specification`
+
+```bash
+cd <project-dir>
+claude
+> /context-modeling Perform context modeling for a team task management web app.
+```
 
